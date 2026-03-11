@@ -3,13 +3,15 @@ import type { VercelRequest, VercelResponse } from '@vercel/node'
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || ''
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || ''
-const REDIRECT_URI = process.env.REDIRECT_URI || ''
 const FRONTEND_URL = process.env.FRONTEND_URL || ''
+
+// The OAuth callback URL - must match what's configured in Google Cloud Console
+const CALLBACK_URL = 'https://knowledge-browser.vercel.app/api/auth/callback'
 
 const oauth2Client = new google.auth.OAuth2(
   GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET,
-  REDIRECT_URI
+  CALLBACK_URL
 )
 
 // In-memory session store (note: resets on serverless cold start)
