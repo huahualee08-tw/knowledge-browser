@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useMemo, useState } from 'react'
 import { useAuth } from './hooks/useAuth'
 import { listFolders, listKnowledgeFiles } from './lib/api'
