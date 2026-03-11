@@ -1,0 +1,16 @@
+name = "knowledge-browser-api"
+main = "api/index.ts"
+compatibility_date = "2024-01-01"
+
+[env.production]
+vars = { FRONTEND_URL = "https://your-domain.pages.dev" }
+
+# 開發時設定環境變數
+# wrangler secret put GOOGLE_CLIENT_ID
+# wrangler secret put GOOGLE_CLIENT_SECRET
+# wrangler secret put REDIRECT_URI
+# wrangler secret put FRONTEND_URL
+
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "your-kv-namespace-id"
