@@ -23,7 +23,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const url = oauth2Client.generateAuthUrl({
     access_type: 'offline',
     scope: scopes,
-    prompt: 'consent'
+    prompt: 'consent',
+    redirect_uri: CALLBACK_URL  // Explicitly set to override any env var
   })
   
   res.redirect(url)
