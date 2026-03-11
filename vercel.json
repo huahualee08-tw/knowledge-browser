@@ -3,5 +3,10 @@
     { "source": "/auth/:path*", "destination": "/api/auth/:path*" },
     { "source": "/api/:path*", "destination": "/api/:path*" },
     { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  ],
+  "functions": {
+    "api/**/*.ts": {
+      "includeFiles": "api/_shared.ts"
+    }
+  }
 }
